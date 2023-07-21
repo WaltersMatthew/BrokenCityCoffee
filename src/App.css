@@ -34,3 +34,6 @@ body {
 .hero-image img {
     height: 50%;
 }
+iframe {
+    filter: invert(95%) hue-rotate(180deg);
+}
