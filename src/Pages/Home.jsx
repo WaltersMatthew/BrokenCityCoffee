@@ -1,21 +1,17 @@
-import { Paper } from "@mui/material";
 import React from "react";
 
 function Home(props) {
     return (
-        <div>
-            <Paper elevation={6}>
-                <p>
-                    Discover a unique creative haven at Broken City Coffee,
-                    where innovation and inspiration come together in perfect
-                    harmony. Led by visionary Adam Watts, we offer a holistic
-                    approach to the arts, guiding artists towards their true
-                    identity through psychology, philosophy, spirituality, and
-                    physiology. At Broken City Coffee, we take pride in
-                    promoting creativity, expression, and authenticity among
-                    young artists through music and movement.
-                </p>
-            </Paper>
+        <div className="mx-20 px-4">
+            <p>
+                Discover a unique creative haven at Broken City Coffee, where
+                innovation and inspiration come together in perfect harmony. Led
+                by visionary Adam Watts, we offer a holistic approach to the
+                arts, guiding artists towards their true identity through
+                psychology, philosophy, spirituality, and physiology. At Broken
+                City Coffee, we take pride in promoting creativity, expression,
+                and authenticity among young artists through music and movement.
+            </p>
             <p>
                 Our compositions, crafted by Adam Watts, Kevin Shah, and Mike
                 Jackson, resonate with soul-stirring emotions, captivating
