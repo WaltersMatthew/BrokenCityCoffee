@@ -1,14 +1,21 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
+import Menu from "./Pages/Menu";
+import Nav from "./components/Nav";
+import About from "./Pages/About";
+
 function App() {
     return (
         <div>
-            <div className="header">
-                <h1>Welcome to Broken City Coffee</h1>
-                <h1>Where creativity finds its perfect blend</h1>
-            </div>
-            <img src="/favicon.ico" alt="logo" />
-            <Home />
+            <Nav />
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/menu" element={<Menu />} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

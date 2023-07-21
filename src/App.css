@@ -1,8 +1,36 @@
 body {
-    background-color: burlywood;
     font-family: "Roboto";
+    background-color: #222222;
+    min-height: 100vh;
+    background-image: url("https://brokencitypercussion.com/assets/theme/9914_1%20-%209.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #d7ccbf;
+}
+.safe-area {
+    margin-top: 8rem;
 }
 .header {
-    text-align: center;
-    font-family: "Roboto" "proxima-nova", "Helvetica Neue";
+    background-color: #2c3131;
+    color: #d7ccbf;
+    box-shadow: 0px 30px 30px -30px #000000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    /* text-align: center; */
+    height: 6rem;
+}
+.hero-content {
+    /* padding: 3rem;
+    margin-top: 6rem;
+    background-image: url("https://brokencitypercussion.com/assets/theme/9914_1%20-%209.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; */
+}
+.hero-content p {
+    margin: 1rem 0;
+}
+.hero-image img {
+    height: 50%;
 }

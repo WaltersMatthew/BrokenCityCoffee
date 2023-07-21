@@ -1,36 +1,34 @@
 import React from "react";
-
+import AppButton from "../components/AppButton";
+import SafeArea from "../components/SafeArea";
 function Home(props) {
     return (
-        <div className="mx-20 px-4">
+        <SafeArea>
             <p>
-                Discover a unique creative haven at Broken City Coffee, where
-                innovation and inspiration come together in perfect harmony. Led
-                by visionary Adam Watts, we offer a holistic approach to the
-                arts, guiding artists towards their true identity through
-                psychology, philosophy, spirituality, and physiology. At Broken
-                City Coffee, we take pride in promoting creativity, expression,
-                and authenticity among young artists through music and movement.
+                Welcome to Broken City Coffee, where art and coffee converge in
+                perfect harmony.
             </p>
             <p>
-                Our compositions, crafted by Adam Watts, Kevin Shah, and Mike
-                Jackson, resonate with soul-stirring emotions, captivating
-                audiences worldwide. Led by Adam Watts, Broken City Productions
-                is a force to be reckoned with, with over 50 million albums sold
-                and numerous chart-topping hits across various genres.
-                Collaborating with renowned artists and major music companies,
-                his talent knows no bounds.{" "}
+                Led by visionary Adam Watts, our carefully crafted coffee blends
+                resonate with soul-stirring emotions, captivating all who step
+                inside.
             </p>
             <p>
-                {" "}
-                Join us at Broken City Coffee, where art and coffee converge.
-                Experience a blend of taste and sound that sparks the
-                imagination, propelling you on a journey of boundless
-                creativity. Unleash your artistic passion in the heart of Broken
-                City – a place where the possibilities are as endless as your
-                dreams.
+                Collaborating with renowned artists and coffee enthusiasts, we
+                have curated a space that knows no bounds, celebrating the
+                fusion of taste and sound.{" "}
             </p>
-        </div>
+            <p>
+                Embrace the artistry of coffee as it intertwines with the
+                vibrant atmosphere of Broken City—a place that invites you to
+                unleash your passion and creativity, one cup at a time.
+            </p>
+            <div className="flex justify-between pt-10">
+                <AppButton to="/menu">Menu</AppButton>
+                <AppButton to="/about">About Us</AppButton>
+                <AppButton to="/visit">Visit Us</AppButton>
+            </div>
+        </SafeArea>
     );
 }
 
