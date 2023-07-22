@@ -1,29 +1,44 @@
 import React from "react";
 import SafeArea from "../components/SafeArea";
-
-var items = [
-    { item: "Felafel sandwich", cost: "$4.50", meal: "L" },
-    { item: "Cheese pizza", cost: "$4.50", meal: "L" },
-    { item: "Breakfast Burrito", cost: "$3.50", meal: "B" },
-    { item: "Hamburger", cost: "$4.00", meal: "L" },
-    { item: "Mac and Cheese", cost: "$4.50", meal: "D" },
-    { item: "Muffin", cost: "$2.50", meal: "B" },
-    { item: "Salisbury Steak", cost: "$6.50", meal: "D" },
-    { item: "Pancakes", cost: "$3.50", meal: "B" },
-    { item: "Spaghetti", cost: "$4.50", meal: "D" },
+import AppCard from "../components/AppCard";
+import AppButton from "../components/AppButton";
+var menu = [
+    { item: "Artisan Pour-over", cost: "$4.5" },
+    { item: "Au Lait", cost: "$5" },
+    { item: "Espresso", cost: "$4" },
+    { item: "Cortado", cost: "$4.5" },
+    { item: "Latte", cost: "$5/$5.5/$6" },
+    { item: "Flavored Latte", cost: "$5.5/$6/$6.5" },
+    { item: "Cappuccino", cost: "$4.5" },
+    { item: "Cold Brew", cost: "$4" },
+    { item: "Espresso Tonic", cost: "$6.5" },
+    { item: "Thai Tea Slush", cost: "$6.5/$7.5" },
+    { item: "Berry Dream", cost: "$6.5/$7.5" },
+    { item: "Organic Oolong", cost: "$5" },
 ];
 
 function Menu(props) {
-    const menuMap = items.map((item, index) => (
-        <div key={`${item}${index}`}>
+    const menuMap = menu.map((item, index) => (
+        <AppCard
+            className="flex flex-col items-center px-0"
+            key={`${item}${index}`}
+        >
             <p>{item.item}</p>
+            <img
+                className="w-4/5 text-center"
+                src="/favicon.ico"
+                alt="coffee"
+            />
             <p>{item.cost}</p>
-        </div>
+            <AppButton>Add to Order</AppButton>
+        </AppCard>
     ));
     return (
         <SafeArea>
-            <h1>This is our menu</h1>
-            {menuMap}
+            <h1 className="text-6xl mb-4">Menu</h1>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center items-center">
+                {menuMap}
+            </div>
         </SafeArea>
     );
 }
