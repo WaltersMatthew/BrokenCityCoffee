@@ -1,12 +1,16 @@
 import React from "react";
-
 function Nav(props) {
     return (
-        <div className="header flex justify-between">
-            <div className="width-50">
-                <h1 className="text-xl md:text-[40px]">Broken City Coffee</h1>
+        // see App.css for box shadow and height styles
+        <div className="header bg-stone-800 flex justify-between items-center z-10">
+            <div className="mt-2 ml-2 text-3xl md:text-[40px]">
+                <a href="/">
+                    Broken
+                    <br /> City
+                    <br /> Coffee
+                </a>
             </div>
-            <img className="" src="/favicon.ico" alt="logo" />
+            <img className="h-24" src="/favicon.ico" alt="logo" />
         </div>
     );
 }

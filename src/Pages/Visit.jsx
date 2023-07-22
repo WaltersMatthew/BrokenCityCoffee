@@ -1,11 +1,16 @@
 import React from "react";
+import AppCard from "../components/AppCard";
 // import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 // import { useMemo } from "react";
 import SafeArea from "../components/SafeArea";
 
-const hours = ["Monday - Thursday: 10a-7p", "Saturday: 6a-5p", "Sunday: 8a-2p"];
+const hours = ["Mo-Th: 10a-7p", "Saturday: 6a-5p", "Sunday: 8a-2p"];
 
 function Visit(props) {
+    const hourMap = hours.map((hour, index) => {
+        return <li key={index}>{hour}</li>;
+    });
+
     // const { isLoaded } = useLoadScript({
     //     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY || "",
     // });
@@ -23,28 +28,36 @@ function Visit(props) {
                     <Marker position={{ lat: 18.52043, lng: 73.856743 }} />
                 </GoogleMap>
             )} */}
-            <div className="flex justify-between">
-                <div>
-                    <p>Come visit our space</p>
-                    <p>Hours:</p>
-                    <ul>
-                        <li>{hours[0]}</li>
-                        <li>{hours[1]}</li>
-                        <li>{hours[2]}</li>
-                        <li>{hours[3]}</li>
-                    </ul>
+            <div className="md:flex justify-around">
+                <div className="md:w-1/3">
+                    <AppCard className="leading-loose text-4xl">
+                        <p className="underline">Hours</p>
+                        <ul>{hourMap}</ul>
+                    </AppCard>
                 </div>
-                <div
-                    style={{
-                        width: "60%",
-                        overflow: "hidden",
-                    }}
-                    className="w-125 flex justify-center border-8 border-stone-600 rounded-xl"
-                >
+                <AppCard className="leading-loose">
+                    <p>
+                        &ensp; Welcome to our prime location, just minutes from
+                        stunning Lake Elsinore. Discover endless possibilities
+                        at our world-class roasting and brewing facility,
+                        situated at the intersection of the 15 and hwy 74.
+                    </p>
+                    <p className="my-2">
+                        &ensp; Embrace convenience at the corner of Central
+                        Avenue and Dexter Place, and embark on a delightful
+                        journey exploring our unique experiences.
+                    </p>
+                    <p>
+                        &ensp; We eagerly await your visit, where flavor and
+                        nature harmonize beautifully. Come, begin your coffee
+                        adventure with us!
+                    </p>
+                </AppCard>
+                <AppCard className="p-0">
                     <iframe
                         title="map"
                         width="100%"
-                        height="600"
+                        height="400px"
                         frameBorder="0"
                         scrolling="no"
                         marginHeight="0"
@@ -55,7 +68,7 @@ function Visit(props) {
                             Calculate population in area
                         </a>
                     </iframe>
-                </div>
+                </AppCard>
             </div>
         </SafeArea>
     );
