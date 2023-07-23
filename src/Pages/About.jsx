@@ -1,4 +1,5 @@
 import React from "react";
+import AppButton from "../components/AppButton";
 import SafeArea from "../components/SafeArea";
 
 function About(props) {
@@ -29,6 +30,19 @@ function About(props) {
                     Broken City – a place where the possibilities are as endless
                     as your dreams.
                 </p>
+            </div>
+            <div className="pt-6">
+                <p className="text-center text-xl">
+                    Learn more about our music, artists, and mission
+                </p>
+                <div className="flex items-center justify-center">
+                    <AppButton to="https://www.brokencitypercussion.com/">
+                        Broken City Percussion
+                    </AppButton>
+                    <AppButton to="https://www.wearebrokencity.com/">
+                        Broken City Artists
+                    </AppButton>
+                </div>
             </div>
         </SafeArea>
     );

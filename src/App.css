@@ -5,6 +5,7 @@ body {
     background-image: url("https://brokencitypercussion.com/assets/theme/9914_1%20-%209.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     color: #d7ccbf;
 }
 .safe-area {
@@ -16,7 +17,7 @@ body {
     width: 100%;
     top: 0;
     /* text-align: center; */
-    height: 7rem;
+    height: 7.5rem;
 }
 .hero-content {
     /* padding: 3rem;

@@ -35,7 +35,7 @@ function Visit(props) {
                         <ul>{hourMap}</ul>
                     </AppCard>
                 </div>
-                <AppCard className="leading-loose">
+                <AppCard className="leading-loose md:w-1/3">
                     <p>
                         &ensp; Welcome to our prime location, just minutes from
                         stunning Lake Elsinore. Discover endless possibilities
