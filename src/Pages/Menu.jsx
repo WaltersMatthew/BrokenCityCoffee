@@ -24,7 +24,7 @@ function Menu(props) {
     const menuMap = menu.map((item, index) => (
         <AppCard
             className="flex flex-col items-center px-0"
-            key={`${item}${index}`}
+            key={`${index}`}
         >
             <p>{item.item}</p>
             <img
