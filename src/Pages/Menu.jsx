@@ -1,43 +1,60 @@
-import React from "react";
-import ActionButton from "../components/ActionButton";
+import React, { useContext, useEffect } from "react";
 import AppCard from "../components/AppCard";
 import SafeArea from "../components/SafeArea";
 import { CartContext } from "../components/CartContext";
 
 const menu = [
-    { item: "Artisan Pour-over", cost: "4.5" },
-    { item: "Au Lait", cost: "5" },
-    { item: "Espresso", cost: "4" },
-    { item: "Cortado", cost: "4.5" },
-    { item: "Latte", cost: "5/5.5/6" },
-    { item: "Flavored Latte", cost: "5.5/6/6.5" },
-    { item: "Cappuccino", cost: "4.5" },
-    { item: "Cold Brew", cost: "4" },
-    { item: "Espresso Tonic", cost: "6.5" },
-    { item: "Thai Tea Slush", cost: "6.5/7.5" },
-    { item: "Berry Dream", cost: "6.5/7.5" },
-    { item: "Organic Oolong", cost: "5" },
+    { name: "Artisan Pour-over", cost: "4.5" },
+    { name: "Au Lait", cost: "5" },
+    { name: "Espresso", cost: "4" },
+    { name: "Cortado", cost: "4.5" },
+    { name: "Latte", cost: "5/5.5/6" },
+    { name: "Flavored Latte", cost: "5.5/6/6.5" },
+    { name: "Cappuccino", cost: "4.5" },
+    { name: "Cold Brew", cost: "4" },
+    { name: "Espresso Tonic", cost: "6.5" },
+    { name: "Thai Tea Slush", cost: "6.5/7.5" },
+    { name: "Berry Dream", cost: "6.5/7.5" },
+    { name: "Organic Oolong", cost: "5" },
 ];
 
 function Menu(props) {
-    
+    const { cartItems, setCartItems } = useContext(CartContext);
+
+    const addToCart = (e, index) => {
+        e.preventDefault();
+        const clickedItem = menu[index];
+        const updatedCartItems = [
+            ...cartItems,
+            { name: clickedItem.name, cost: clickedItem.cost },
+        ];
+        setCartItems(updatedCartItems);
+        console.log(cartItems);
+    };
+
+    useEffect(() => {
+        // Log the updated cartItems after the state has been updated
+        console.log("Updated cartItems:", cartItems);
+    }, [cartItems]);
+
     const menuMap = menu.map((item, index) => (
-        <AppCard
-            className="flex flex-col items-center px-0"
-            key={`${index}`}
-        >
-            <p>{item.item}</p>
+        <AppCard className="flex flex-col items-center px-0" key={`${index}`}>
+            <p>{item.name}</p>
             <img
                 className="w-4/5 text-center"
                 src="/favicon.ico"
                 alt="coffee"
             />
             <p>{item.cost}</p>
-            <ActionButton onCLick={() => addToCart}>Add to Order</ActionButton>
+            <button
+                className="m-4 px-4 py-2 bg-stone-700/75 hover:bg-stone-700"
+                onClick={(e) => addToCart(e, index)}
+            >
+                Add to Order
+            </button>
         </AppCard>
     ));
 
-    const addToCart = 
     return (
         <SafeArea>
             <h1 className="text-6xl mb-4">Menu</h1>
