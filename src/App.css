@@ -19,14 +19,14 @@ body {
     /* text-align: center; */
     height: 7.5rem;
 }
-.hero-content {
-    /* padding: 3rem;
+/* .hero-content {
+    padding: 3rem;
     margin-top: 6rem;
     background-image: url("https://brokencitypercussion.com/assets/theme/9914_1%20-%209.jpg");
     background-size: cover;
     background-position: center;
-    min-height: 100vh; */
-}
+    min-height: 100vh;
+ } */
 .hero-content p {
     margin: 1rem 0;
 }
