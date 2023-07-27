@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../components/CartContext";
 function Nav(props) {
+    const { cartItems } = useContext(CartContext);
+
+    const cartCount = cartItems.length;
     return (
         // see App.css for box shadow and height styles
         <div className="header bg-stone-800 flex justify-between items-center z-10">
@@ -16,7 +20,12 @@ function Nav(props) {
                     <br /> Coffee
                 </a>
             </div>
-            <img className="h-24" src="/favicon.ico" alt="logo" />
+            <div className="flex items-center">
+                <p className="mr-6 border rounded-full px-2 bg-stone-600">
+                    {cartCount}
+                </p>
+                <img className="h-24" src="/favicon.ico" alt="logo" />
+            </div>
         </div>
     );
 }

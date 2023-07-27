@@ -1,8 +1,10 @@
 import React from "react";
-import SafeArea from "../components/SafeArea";
+import ActionButton from "../components/ActionButton";
 import AppCard from "../components/AppCard";
-import AppButton from "../components/AppButton";
-var menu = [
+import SafeArea from "../components/SafeArea";
+import { CartContext } from "../components/CartContext";
+
+const menu = [
     { item: "Artisan Pour-over", cost: "4.5" },
     { item: "Au Lait", cost: "5" },
     { item: "Espresso", cost: "4" },
@@ -18,6 +20,7 @@ var menu = [
 ];
 
 function Menu(props) {
+    
     const menuMap = menu.map((item, index) => (
         <AppCard
             className="flex flex-col items-center px-0"
@@ -30,9 +33,11 @@ function Menu(props) {
                 alt="coffee"
             />
             <p>{item.cost}</p>
-            <AppButton>Add to Order</AppButton>
+            <ActionButton onCLick={() => addToCart}>Add to Order</ActionButton>
         </AppCard>
     ));
+
+    const addToCart = 
     return (
         <SafeArea>
             <h1 className="text-6xl mb-4">Menu</h1>
