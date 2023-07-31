@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../components/CartContext";
 function Nav(props) {
     const { cartItems } = useContext(CartContext);
@@ -21,9 +22,11 @@ function Nav(props) {
                 </a>
             </div>
             <div className="flex items-center">
-                <p className="mr-6 border rounded-full px-2 bg-stone-600">
-                    {cartCount}
-                </p>
+                <a href="/cart">
+                    <p className="mr-6 border rounded-full px-2 bg-stone-600">
+                        {cartCount}
+                    </p>
+                </a>
                 <img className="h-24" src="/favicon.ico" alt="logo" />
             </div>
         </div>

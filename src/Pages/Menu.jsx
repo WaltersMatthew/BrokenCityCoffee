@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import AppCard from "../components/AppCard";
 import SafeArea from "../components/SafeArea";
 import { CartContext } from "../components/CartContext";
+import AppButton from "../components/AppButton";
 
 const menu = [
     { name: "Artisan Pour-over", cost: "4.5" },
@@ -47,7 +48,7 @@ function Menu(props) {
             />
             <p>{item.cost}</p>
             <button
-                className="m-4 px-4 py-2 bg-stone-700/75 hover:bg-stone-700"
+                className="m-4 text-sm md:text-xl px-4 py-2 bg-stone-700/75 hover:bg-stone-700 -mb-2"
                 onClick={(e) => addToCart(e, index)}
             >
                 Add to Order
@@ -61,6 +62,7 @@ function Menu(props) {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center items-center">
                 {menuMap}
             </div>
+            <AppButton to="/cart">View your cart</AppButton>
         </SafeArea>
     );
 }
