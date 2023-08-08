@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../components/CartContext";
 import AppButton from "../components/AppButton";
 import AppCard from "../components/AppCard";
@@ -6,17 +6,14 @@ import Modal from "../components/Modal";
 import SafeArea from "../components/SafeArea";
 
 function Cart(props) {
-    // Use a unique key to force a re-render when local storage is cleared
-    const [cartKey, setCartKey] = useState(Date.now());
-
     // Get cartItems and setCartItems from the CartContext
     const { cartItems, setCartItems } = useContext(CartContext);
 
     // Function to handle clearing local storage
     const handleClearLocalStorage = () => {
         localStorage.clear();
-        // Update the cartKey to trigger a re-render
-        setCartKey(Date.now());
+        // Update cartItems in context to trigger a re-render
+        setCartItems([]);
     };
 
     // Calculate cart total
@@ -37,7 +34,9 @@ function Cart(props) {
         <SafeArea>
             <p className="text-center">
                 You have no items in your cart. Head back to the{" "}
-                <AppButton to="/menu">Menu</AppButton> to start your order
+                <AppButton to="/menu">Menu</AppButton> to start your order,{" "}
+                <br /> head <AppButton to="/">Home</AppButton> to read more
+                about Broken City Coffee
             </p>
         </SafeArea>
     );
@@ -51,13 +50,14 @@ function Cart(props) {
                 <p className="float-right">Total ${total}</p>
             </AppCard>
             <div className="flex justify-between">
-                <AppButton to="/menu">Back to menu</AppButton>
+                <AppButton to="/menu" onClick={handleClearLocalStorage}>
+                    Back to menu
+                </AppButton>
                 <Modal handleClearLocalStorage={handleClearLocalStorage}>
                     <div className="flex flex-col items-center">
                         <p>
                             Thank you, your order has been placed! See you soon!
                         </p>
-                        <AppButton to="/">Back Home</AppButton>
                     </div>
                 </Modal>
             </div>
