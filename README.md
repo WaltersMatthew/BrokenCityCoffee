@@ -21,12 +21,21 @@ Broken City Coffee is a React-based project that embodies the essence of a trend
 
 ## Features
 
-Home Page: A captivating homepage that instantly welcomes visitors, featuring enticing images and a warm ambiance.
-Visit Us: Discover the coffee shop's location through an integrated Mapbox iframe, ensuring you'll never lose your way to your favorite brew.
-About Us: Immerse yourself in the coffee shop's narrative, delving into its unique concept, values, and the vibrant city it calls home.
-Menu: Satisfy your curiosity by perusing through a diverse menu of coffee concoctions, each accompanied by a mouthwatering description.
-Cart: As you explore the menu, the cart elegantly keeps track of your selections. When you're ready to order, simply proceed to checkout and watch your choices come to life.
-Order Management: The cart's selections persist across visits, thanks to local storage magic. When you've enjoyed your order, a simple "Clear Cart" click refreshes the canvas for your next adventure.
+-   **Home Page**: A captivating homepage that instantly welcomes visitors, featuring enticing images and a warm ambiance.
+
+-   **Visit Us**: Discover the coffee shop's location through an integrated Mapbox iframe, ensuring you'll never lose your way to your favorite brew.
+
+-   **About Us**: Immerse yourself in the coffee shop's narrative, delving into its unique concept, values, and the vibrant city it calls home.
+
+-   **Menu**: Satisfy your curiosity by perusing through a diverse menu of coffee concoctions, each accompanied by a mouthwatering description.
+
+-   **Cart**: As you explore the menu, the cart elegantly keeps track of your selections. When you're ready to order, simply proceed to checkout and watch your choices come to life. The **Cart** functionality utilizes the `useState` hook for managing the selected items and quantities. The state of the cart is updated dynamically as items are added or removed, providing a seamless and reactive shopping experience. Additionally, the cart's state persists across pages and visits using the `localStorage` feature. This means that even if you navigate away from the cart page or close the browser, your selected items will still be retained when you return, offering a convenient and consistent shopping journey.
+
+-   **Order Management**: When you've enjoyed your order, a simple "Clear Cart" click refreshes the canvas for your next adventure. To achieve this level of state persistence and continuity, the `useContext` hook is employed in conjunction with `localStorage`. The global state of the cart, managed by `useContext`, ensures consistent communication between the cart and other parts of the application. The use of `localStorage` guarantees that your cart's state remains intact, enhancing the user experience across sessions.
+
+-   **Styling with Tailwind CSS**: The entire user interface is beautifully styled using Tailwind CSS, a utility-first CSS framework. Tailwind CSS empowers developers to create responsive and visually appealing designs with minimal effort. The project embraces Tailwind's intuitive class-based approach, ensuring a cohesive and polished appearance throughout.
+
+> Note: To learn more about the `useState`, `useContext`, and `localStorage`, refer to the official [React documentation](https://reactjs.org/docs/hooks-intro.html) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 ## Installation
 
