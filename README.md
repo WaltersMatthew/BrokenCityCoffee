@@ -36,26 +36,26 @@ Clone the Repository:
 
 Copy code
 
-```
+```bash
 git clone https://github.com/waltersmatthew/broken-city-coffee.git
 ```
 
 Navigate to the Project Directory:
 
-```
+```bash
 cd broken-city-coffee
 ```
 
 Install Dependencies:
 
-```
+```bash
 npm install
 ```
 
 Usage
 Once the setup is complete, savor the experience by starting the development server:
 
-```
+```bash
 npm start
 ```
 
