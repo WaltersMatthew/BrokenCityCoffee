@@ -35,19 +35,30 @@ To embark on your journey to Broken City Coffee, follow these simple steps:
 Clone the Repository:
 
 Copy code
-`git clone https://github.com/waltersmatthew/broken-city-coffee.git`
+
+```
+git clone https://github.com/waltersmatthew/broken-city-coffee.git
+```
 
 Navigate to the Project Directory:
-`cd broken-city-coffee`
+
+```
+cd broken-city-coffee
+```
 
 Install Dependencies:
-`npm install`
+
+```
+npm install
+```
 
 Usage
 Once the setup is complete, savor the experience by starting the development server:
 
-Copy code
-`npm start`
+```
+npm start
+```
+
 Unveil the magic by accessing `http://localhost:3000` in your browser, where the Broken City Coffee world awaits. Engage with the meticulously designed pages, savor the virtual menu, and let the cart be your guide as you craft your coffee escapade.
 
 ## Contributing
