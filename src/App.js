@@ -1,11 +1,12 @@
 import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { CartProvider } from "./components/CartContext";
-import Home from "./Pages/Home";
+import About from "./Pages/About";
 import Cart from "./Pages/Cart";
+import Footer from "./components/Footer";
+import Home from "./Pages/Home";
 import Menu from "./Pages/Menu";
 import Nav from "./components/Nav";
-import About from "./Pages/About";
 import Visit from "./Pages/Visit";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
             </BrowserRouter>
+            <Footer />
         </CartProvider>
     );
 }
