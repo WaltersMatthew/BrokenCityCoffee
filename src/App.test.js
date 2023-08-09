@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
 import App from "../src/App"; // Adjust the path according to your file structure
 
 describe("Home component", () => {
