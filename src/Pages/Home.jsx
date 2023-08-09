@@ -1,8 +1,6 @@
-// import { useState } from "react";
 import AppButton from "../components/AppButton";
 import SafeArea from "../components/SafeArea";
 function Home(props) {
-    // const [cart, setCart] = useState([]);
     return (
         <SafeArea>
             <p>

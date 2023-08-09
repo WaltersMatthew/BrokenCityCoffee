@@ -25,12 +25,10 @@ function Menu(props) {
     const addToCart = (e, index) => {
         e.preventDefault();
         const clickedItem = menu[index];
-        const updatedCartItems = [
-            ...cartItems,
+        setCartItems((prevCartItems) => [
+            ...prevCartItems,
             { name: clickedItem.name, cost: clickedItem.cost },
-        ];
-        setCartItems(updatedCartItems);
-        console.log(cartItems);
+        ]);
     };
 
     useEffect(() => {
@@ -39,7 +37,7 @@ function Menu(props) {
     }, [cartItems]);
 
     const menuMap = menu.map((item, index) => (
-        <AppCard className="flex flex-col items-center px-0" key={`${index}`}>
+        <AppCard className="flex flex-col items-center px-0" key={item.name}>
             <p>{item.name}</p>
             <img
                 className="w-4/5 text-center"

@@ -1,7 +1,5 @@
 import React from "react";
 import AppCard from "../components/AppCard";
-// import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-// import { useMemo } from "react";
 import SafeArea from "../components/SafeArea";
 
 const hours = ["Mo-Th: 10a-7p", "Saturday: 6a-5p", "Sunday: 8a-2p"];
@@ -11,23 +9,8 @@ function Visit(props) {
         return <li key={index}>{hour}</li>;
     });
 
-    // const { isLoaded } = useLoadScript({
-    //     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY || "",
-    // });
-    // const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
     return (
         <SafeArea>
-            {/* {!isLoaded ? (
-                <h1>Loading...</h1>
-            ) : (
-                <GoogleMap
-                    mapContainerClassName="map-container"
-                    center={center}
-                    zoom={10}
-                >
-                    <Marker position={{ lat: 18.52043, lng: 73.856743 }} />
-                </GoogleMap>
-            )} */}
             <div className="md:flex justify-around">
                 <div className="md:w-1/3">
                     <AppCard className="leading-loose text-4xl">
@@ -63,6 +46,7 @@ function Visit(props) {
                         marginHeight="0"
                         marginWidth="0"
                         src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=29280%20Central%20Ave%20Lake%20Elsinore,%20CA%2092532+(Costco)&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        alt="Google Map showing location"
                     >
                         <a href="https://www.maps.ie/population/">
                             Calculate population in area

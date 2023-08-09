@@ -12,22 +12,6 @@ const CartProvider = ({ children }) => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }, [cartItems]);
 
-    // useEffect(() => {
-    //     // Watch for changes in local storage made in other tabs/windows
-    //     const handleStorageChange = (event) => {
-    //         if (event.key === "cartItems") {
-    //             const newCartItems = JSON.parse(event.newValue);
-    //             setCartItems(newCartItems || []);
-    //         }
-    //     };
-
-    //     window.addEventListener("storage", handleStorageChange);
-
-    //     return () => {
-    //         window.removeEventListener("storage", handleStorageChange);
-    //     };
-    // }, []);
-
     // Periodically check for changes in localStorage
     useEffect(() => {
         const checkLocalStorageChanges = () => {
